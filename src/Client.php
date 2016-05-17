@@ -131,9 +131,9 @@ class Client {
 
     if ($this->options['base_url']) {
       if ($requestUrl[0] != '/' && substr($this->options['base_url'], -1) != '/') {
-        $requestUrl->url = '/' . $requestUrl->url;
+        $requestUrl = '/' . $requestUrl;
       }
-      $requestUrl = $this->options['base_url'] . $requestUrl->url;
+      $requestUrl = $this->options['base_url'] . $requestUrl;
     }
     $curlopt[CURLOPT_URL] = $requestUrl;
 
@@ -168,6 +168,8 @@ class Client {
 
   /**
    * @param array $curlOptions
+   *
+   * @return Response
    */
   private function parse_response($curlOptions) {
 
