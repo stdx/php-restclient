@@ -1,6 +1,5 @@
 PHP REST Client
 ===============
-(c) 2013 Travis Dent <tcdent@gmail.com>
 
 Installation
 -----------
