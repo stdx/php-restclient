@@ -7,11 +7,33 @@ use Iterator;
 
 class Response implements Iterator, ArrayAccess {
 
-  // Populated after execution:
-  private $response; // Response body.
-  private $headers; // Parsed reponse header object.
-  private $info; // Response info object.
-  private $error; // Response error string.
+  /**
+   * The response body.
+   *
+   * @var mixed
+   */
+  private $response;
+
+  /**
+   * Parsed response header object.
+   *
+   * @var array
+   */
+  private $headers;
+
+  /**
+   * Response info object.
+   *
+   * @var mixed
+   */
+  private $info;
+
+  /**
+   * Response error string
+   *
+   * @var mixed
+   */
+  private $error;
 
   /**
    * Decoded response body. Populated as-needed.

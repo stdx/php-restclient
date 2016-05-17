@@ -11,9 +11,14 @@
     "JSON",
     "XML"
   ],
-  "homepage": "http://github.com/tcdent/php-restclient",
+  "homepage": "http://github.com/dahms/php-restclient",
   "license": "MIT",
   "authors": [
+    {
+      "name": "Stefan Dahms",
+      "role": "Developer",
+      "email": "dahms@chemmedia.de"
+    }
     {
       "name": "Travis Dent",
       "role": "Developer",
@@ -21,7 +26,7 @@
     }
   ],
   "support": {
-    "issues": "http://github.com/tcdent/php-restclient/issues"
+    "issues": "http://github.com/dahms/php-restclient/issues"
   },
   "require": {
     "php": ">=5.3",

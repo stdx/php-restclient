@@ -2,10 +2,21 @@
 
 namespace RestClient;
 
+/**
+ * The client.
+ *
+ * @package RestClient
+ */
 class Client {
 
   private $options;
 
+
+  /**
+   * Client constructor.
+   *
+   * @param array $options
+   */
   public function __construct($options = array()) {
     $default_options = array(
       'headers' => array(),
@@ -49,10 +60,29 @@ class Client {
   }
 
 
+  /**
+   * Execute a GET request.
+   *
+   * @param $url
+   * @param array $parameters
+   * @param array $headers
+   *
+   * @return Response
+   */
   public function get($url, $parameters = array(), $headers = array()) {
     return $this->execute($url, 'GET', $parameters, $headers);
   }
 
+  /**
+   * Execute the request.
+   *
+   * @param $url
+   * @param string $method
+   * @param array $parameters
+   * @param array $headers
+   *
+   * @return Response
+   */
   public function execute($url, $method = 'GET', $parameters = array(), $headers = array()) {
     $requestUrl = $url;
 
@@ -117,6 +147,15 @@ class Client {
     return $this->parse_response($curlopt);
   }
 
+  /**
+   * Format the query string.
+   *
+   * @param $parameters
+   * @param string $primary
+   * @param string $secondary
+   *
+   * @return string
+   */
   private function formatQuery($parameters, $primary = '=', $secondary = '&') {
     $query = "";
     foreach ($parameters as $key => $value) {
@@ -167,14 +206,41 @@ class Client {
     return $response;
   }
 
+  /**
+   * Execute a POST request.
+   *
+   * @param $url
+   * @param array $parameters
+   * @param array $headers
+   *
+   * @return Response
+   */
   public function post($url, $parameters = array(), $headers = array()) {
     return $this->execute($url, 'POST', $parameters, $headers);
   }
 
+  /**
+   * Execute a PUT request.
+   *
+   * @param $url
+   * @param array $parameters
+   * @param array $headers
+   *
+   * @return Response
+   */
   public function put($url, $parameters = array(), $headers = array()) {
     return $this->execute($url, 'PUT', $parameters, $headers);
   }
 
+  /**
+   * Execute a DELETE request.
+   *
+   * @param $url
+   * @param array $parameters
+   * @param array $headers
+   *
+   * @return Response
+   */
   public function delete($url, $parameters = array(), $headers = array()) {
     return $this->execute($url, 'DELETE', $parameters, $headers);
   }
